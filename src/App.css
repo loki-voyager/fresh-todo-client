@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* tags */
+header {
+  @apply bg-[#261B0E] text-[#F2EDD5];
+}
+nav {
+  @apply flex justify-start items-center p-1 gap-1 flex-wrap;
+}
+nav > a,
+nav > button {
+  @apply hover:bg-[#F2EDD5] hover:text-[#261B0E] ease-linear duration-200 h-full px-4 py-2 rounded-full;
+}
+h1 {
+  @apply text-2xl font-bold;
+}
+h2 {
+  @apply text-xl font-bold;
+}
+main > .wrapper {
+  @apply py-2 px-5;
+}
+button,
+.button {
+  @apply px-4 py-2 bg-[#261B0E] bg-opacity-40 hover:bg-opacity-100 hover:text-[#F2EDD5] ease-linear duration-200 rounded-full;
+}
+form,
+.form {
+  @apply flex flex-col gap-1 bg-[#261B0E] bg-opacity-40 p-1 rounded-3xl;
+}
+form > input,
+.form > input {
+  @apply bg-[#261B0E] bg-opacity-80 rounded-full px-4 py-2 text-[#F2EDD5];
+}
+form.toDoForm {
+  @apply p-2;
+}
+/* classes */
+.mobileNavigationBlock {
+  @apply flex justify-start items-center p-1 gap-1 flex-wrap;
+}
+.mobileNavigationBlock > a,
+.mobileNavigationBlock > button {
+  @apply hover:bg-[#F2EDD5] hover:text-[#261B0E] ease-linear duration-200 h-full px-4 py-2 rounded-full;
+}
+.mobileNavigationBlock {
+  @apply absolute -top-full left-0 ease-linear duration-200 w-full h-auto bg-[#261B0E] flex flex-col gap-1 text-3xl p-2 items-start;
+}
+.mobileNavigationBlock.active {
+  @apply top-0;
+}
+.btnRed {
+  @apply bg-[#F20505] bg-opacity-40 hover:bg-opacity-100;
+}
+.btnDisabled {
+  @apply bg-[#261B0E] bg-opacity-40 cursor-default hover:bg-opacity-40;
+}
+.toDoForm > textarea {
+  @apply bg-[#261B0E] bg-opacity-80 px-4 py-2 text-[#F2EDD5] rounded-3xl;
+}
+.wrapper {
+  @apply max-w-screen-lg h-full w-full mx-auto;
+}
+.btnGreen {
+  @apply bg-[#D2D904] bg-opacity-40 hover:bg-opacity-100 text-[#261B0E] hover:text-[#261B0E];
+}
+.inputFileBlock {
+  @apply flex;
+}
+.inputFileBlock > button {
+  @apply flex-1;
+}
+.picBlock {
+  @apply flex flex-row gap-1 flex-wrap;
+}
+.picBlock img {
+  @apply max-h-[20vh] h-auto rounded;
+}
+img.deleted {
+  @apply opacity-40;
+}
+.btnLine {
+  @apply flex gap-1;
+}
+a.link {
+  @apply text-[#261B0E] underline hover:text-pink-950 ease-linear duration-200 hover:text-lg;
+}
+.usersList {
+  @apply flex flex-col gap-1;
+}
+.userBlock {
+  @apply flex gap-1 bg-[#261B0E] bg-opacity-40 border border-[#261B0E] text-white rounded py-1 px-2;
+}
+.toDoWrapper {
+  @apply flex flex-wrap gap-1 justify-center;
+}
+.toDoBlock,
+.toDoBlockEdit {
+  @apply flex flex-col gap-1 bg-[#261B0E] bg-opacity-40 border border-[#261B0E] text-white rounded py-1 px-2 self-start;
+}
+.toDoBlockEdit {
+  @apply w-full;
+}
+.userBlockInfo,
+.toDoBlockInfo {
+  @apply flex flex-col gap-1 flex-1;
+}
+.userBlockBtn,
+.toDoBtnBlock {
+  @apply flex gap-1 justify-end items-end;
+}
+.pagination {
+  @apply flex gap-1 w-full bg-[#261B0E] text-[#F2EDD5] rounded-full p-1;
+}
+.parrentBlockOfNumber {
+  @apply flex w-full;
+}
+.pagination > .parrentBlockOfNumber > .blockOfNumber > .currentPage {
+  @apply bg-[#F2EDD5] text-[#261B0E];
+}
+.pagination > .parrentBlockOfNumber > .blockOfNumber > button,
+.pagination > button {
+  @apply bg-none hover:bg-[#F2EDD5] hover:text-[#261B0E];
+}
+.blockOfNumber {
+  @apply flex gap-1 w-full flex-1 overflow-scroll;
+}
+.changeLimit {
+  @apply bg-transparent hover:bg-[#F2EDD5] hover:text-[#261B0E] rounded-full px-4 ease-linear duration-200;
+}
+.usersWrapper {
+  @apply flex flex-wrap gap-1 justify-center;
+}
+.adminUserToDoWrapper {
+  @apply flex flex-col gap-4;
+}
+/*pages*/
+
+.NotFound {
+  @apply flex gap-1 items-center;
+}
+.SignUp {
+  @apply flex flex-col gap-1;
+}
+.Auth {
+  @apply flex gap-1;
+}
+.ToDo {
+  @apply flex flex-col gap-1;
+}

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  @apply min-w-full min-h-full flex bg-[#F2EDD5];
+}
+
+#root {
+  @apply flex-col;
+}
