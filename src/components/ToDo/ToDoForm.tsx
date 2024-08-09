@@ -4,7 +4,7 @@ import { Base64ArrayModifier } from "../Pic/Base64ArrayModifier";
 import { UserType } from "../../types/UserTypes/UserTypes";
 import { ToDoPost } from "../../service/ToDo/ToDoPost";
 
-type ToDoForm = {
+type ToDoFormProps = {
   user: UserType;
   body: string;
   setBody: React.Dispatch<React.SetStateAction<string>>;
@@ -24,7 +24,7 @@ const ToDoForm = ({
   setError,
   ToDoGetHandler,
   setOpenForm,
-}: ToDoForm) => {
+}: ToDoFormProps) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -77,10 +77,9 @@ const ToDoForm = ({
   };
 
   return (
-    <div>
+    <div className="toDoFormBlock">
       <form
         className="toDoForm"
-        id="signupForm"
         onSubmit={(e) => {
           handleSubmit(e);
         }}

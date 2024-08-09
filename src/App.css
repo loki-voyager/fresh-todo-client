@@ -57,6 +57,9 @@ form.toDoForm {
 .btnDisabled {
   @apply bg-[#261B0E] bg-opacity-40 cursor-default hover:bg-opacity-40;
 }
+.toDoFormBlock{
+  @apply flex flex-col gap-1
+}
 .toDoForm > textarea {
   @apply bg-[#261B0E] bg-opacity-80 px-4 py-2 text-[#F2EDD5] rounded-3xl;
 }
