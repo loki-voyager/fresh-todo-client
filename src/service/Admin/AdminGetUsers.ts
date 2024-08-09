@@ -1,3 +1,4 @@
+import { config } from "../../config";
 import { UsersListType } from "../../types/UserTypes/UserTypes";
 
 type AdminGetUsersResProps = {
@@ -18,7 +19,7 @@ const AdminGetUsers = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/AdminGetUsers", {
+    const res = await fetch(`${config.url}/AdminGetUsers`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

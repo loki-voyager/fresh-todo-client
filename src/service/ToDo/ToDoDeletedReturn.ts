@@ -1,3 +1,5 @@
+import { config } from "../../config";
+
 const ToDoDeletedReturn = async ({
     token,
     id,
@@ -8,7 +10,7 @@ const ToDoDeletedReturn = async ({
     setError: React.Dispatch<React.SetStateAction<string>>;
   }) => {
     try {
-      const res = await fetch("http://localhost:8080/ToDoDeletedReturn", {
+      const res = await fetch(`${config.url}/ToDoDeletedReturn`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,3 +1,5 @@
+import { config } from "../../config";
+
 const AdminDeleteUserToDoDeleted = async ({
     id,
     token,
@@ -8,7 +10,7 @@ const AdminDeleteUserToDoDeleted = async ({
     setError: React.Dispatch<React.SetStateAction<string>>;
   }) => {
     try {
-      const res = await fetch("http://localhost:8080/AdminDeleteUserToDoDeleted", {
+      const res = await fetch(`${config.url}/AdminDeleteUserToDoDeleted`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

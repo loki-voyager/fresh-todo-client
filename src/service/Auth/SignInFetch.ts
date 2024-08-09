@@ -1,3 +1,4 @@
+import { config } from "../../config";
 import { SignInResProps } from "../../types/AuthTypes/SignInTypes";
 
 const SignInFetch = async ({
@@ -10,7 +11,7 @@ const SignInFetch = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/SignIn", {
+    const res = await fetch(`${config.url}/SignIn`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

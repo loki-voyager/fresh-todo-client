@@ -1,3 +1,5 @@
+import { config } from "../../config";
+
 type ToDoEditProps = {
   id: string;
   token: string;
@@ -8,7 +10,7 @@ type ToDoEditProps = {
 
 const ToDoEdit = async ({ id, token, setError, body, pic }: ToDoEditProps) => {
   try {
-    const res = await fetch("http://localhost:8080/ToDoEdit", {
+    const res = await fetch(`${config.url}/ToDoEdit`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

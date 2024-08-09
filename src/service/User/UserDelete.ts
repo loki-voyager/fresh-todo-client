@@ -1,3 +1,4 @@
+import { config } from "../../config";
 import { SignOut } from "../SignOut";
 
 const UserDelete = async ({
@@ -10,7 +11,7 @@ const UserDelete = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/UserDelete", {
+    const res = await fetch(`${config.url}/UserDelete`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -26,7 +27,7 @@ const UserDelete = async ({
     }
 
     const { deleted } = await res.json();
-    SignOut();
+    deleted && SignOut();
   } catch (error: any) {
     setError(error.message);
     return [];

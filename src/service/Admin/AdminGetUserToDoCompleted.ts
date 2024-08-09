@@ -1,3 +1,4 @@
+import { config } from "../../config";
 import { ToDoCompletedGetResProps } from "../ToDo/ToDoCompletedGet";
 
 const AdminGetUserToDoCompleted = async ({
@@ -14,7 +15,7 @@ const AdminGetUserToDoCompleted = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/AdminGetUserToDoCompleted", {
+    const res = await fetch(`${config.url}/AdminGetUserToDoCompleted`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

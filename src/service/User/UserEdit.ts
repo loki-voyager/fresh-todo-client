@@ -1,3 +1,4 @@
+import { config } from "../../config";
 import { SignInFetch } from "../Auth/SignInFetch";
 
 type EditUserType = {
@@ -18,7 +19,7 @@ const UserEdit = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/UserEdit", {
+    const res = await fetch(`${config.url}/UserEdit`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,3 +1,5 @@
+import { config } from "../../config";
+
 const UserCreateVerification = async ({
   username,
   email,
@@ -8,7 +10,7 @@ const UserCreateVerification = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/UserCreateVerification", {
+    const res = await fetch(`${config.url}/UserCreateVerification`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

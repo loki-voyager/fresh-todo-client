@@ -1,3 +1,4 @@
+import { config } from "../../config";
 
 const UserPicGet = async ({
   data,
@@ -9,7 +10,7 @@ const UserPicGet = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }): Promise<string[]> => {
   try {
-    const res = await fetch("http://localhost:8080/UserPic", {
+    const res = await fetch(`${config.url}/UserPic`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

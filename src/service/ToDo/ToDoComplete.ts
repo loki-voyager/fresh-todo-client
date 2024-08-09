@@ -1,3 +1,5 @@
+import { config } from "../../config";
+
 const ToDoComplete = async ({
     token,
     id,
@@ -8,7 +10,7 @@ const ToDoComplete = async ({
     setError: React.Dispatch<React.SetStateAction<string>>;
   }) => {
     try {
-      const res = await fetch("http://localhost:8080/ToDoComplete", {
+      const res = await fetch(`${config.url}/ToDoComplete`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

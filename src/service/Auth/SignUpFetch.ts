@@ -1,3 +1,4 @@
+import { config } from "../../config";
 import { SignUpResProps } from "../../types/AuthTypes/SignUpTypes";
 
 const SignUpFetch = async ({
@@ -16,10 +17,10 @@ const SignUpFetch = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    if (pic == undefined) {
+    if (pic === undefined) {
       pic = [];
     }
-    const res = await fetch("http://localhost:8080/SignUp", {
+    const res = await fetch(`${config.url}/SignUp`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

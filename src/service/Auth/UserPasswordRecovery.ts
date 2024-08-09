@@ -1,3 +1,5 @@
+import { config } from "../../config";
+
 const UserPasswordRecovery = async ({
     email,
     code,
@@ -12,7 +14,7 @@ const UserPasswordRecovery = async ({
     setError: React.Dispatch<React.SetStateAction<string>>;
   }) => {
     try {
-      const res = await fetch("http://localhost:8080/UserPasswordRecovery", {
+      const res = await fetch(`${config.url}/UserPasswordRecovery`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,3 +1,4 @@
+import { config } from "../../config";
 import { ToDoGetResProps } from "../ToDo/ToDoGet";
 
 const UserToDoGet = async ({
@@ -14,7 +15,7 @@ const UserToDoGet = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/UserToDoGet", {
+    const res = await fetch(`${config.url}/UserToDoGet`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

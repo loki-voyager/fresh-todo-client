@@ -1,3 +1,4 @@
+import { config } from "../../config";
 import { UserType } from "../../types/UserTypes/UserTypes";
 
 const OwnerGiveAdminRole = async ({
@@ -10,7 +11,7 @@ const OwnerGiveAdminRole = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/OwnerGiveAdminRole", {
+    const res = await fetch(`${config.url}/OwnerGiveAdminRole`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

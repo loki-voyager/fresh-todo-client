@@ -1,3 +1,4 @@
+import { config } from "../../config";
 import { ToDoDeletedGetResProps } from "../ToDo/ToDoDeletedGet";
 
 const AdminGetUserToDoDeleted = async ({
@@ -14,7 +15,7 @@ const AdminGetUserToDoDeleted = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/AdminGetUserToDoDeleted", {
+    const res = await fetch(`${config.url}/AdminGetUserToDoDeleted`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

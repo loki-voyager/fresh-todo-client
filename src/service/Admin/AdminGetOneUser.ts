@@ -1,3 +1,5 @@
+import { config } from "../../config";
+
 const AdminGetOneUser = async ({
   id,
   token,
@@ -8,7 +10,7 @@ const AdminGetOneUser = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/AdminGetOneUser", {
+    const res = await fetch(`${config.url}/AdminGetOneUser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

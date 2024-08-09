@@ -1,3 +1,5 @@
+import { config } from "../../config";
+
 const ToDoDelete = async ({
   token,
   id,
@@ -8,7 +10,7 @@ const ToDoDelete = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/ToDoDelete", {
+    const res = await fetch(`${config.url}/ToDoDelete`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

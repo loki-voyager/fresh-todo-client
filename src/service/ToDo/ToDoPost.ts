@@ -1,4 +1,4 @@
-import { ToDoTypes } from "../../types/ToDoTypes/ToDoTypes";
+import { config } from "../../config";
 
 const ToDoPost = async ({
   token,
@@ -12,10 +12,10 @@ const ToDoPost = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    if (pic == undefined) {
+    if (pic === undefined) {
       pic = [];
     }
-    const res = await fetch("http://localhost:8080/ToDoPost", {
+    const res = await fetch(`${config.url}/ToDoPost`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

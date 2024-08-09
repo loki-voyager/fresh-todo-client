@@ -1,3 +1,4 @@
+import { config } from "../../config";
 import { ToDoCompletedTypes } from "../../types/ToDoTypes/ToDoTypes";
 
 type ToDoCompletedGetResProps = {
@@ -20,7 +21,7 @@ const ToDoCompletedGet = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/ToDoCompletedGet", {
+    const res = await fetch(`${config.url}/ToDoCompletedGet`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

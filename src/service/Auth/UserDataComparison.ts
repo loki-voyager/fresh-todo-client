@@ -1,5 +1,5 @@
+import { config } from "../../config";
 import { SignInResProps } from "../../types/AuthTypes/SignInTypes";
-import { UserType } from "../../types/UserTypes/UserTypes";
 
 type UserDataComparisonProps = {
   token?: string;
@@ -11,7 +11,7 @@ const UserDataComparison = async ({
   setError,
 }: UserDataComparisonProps) => {
   try {
-    const res = await fetch("http://localhost:8080/UserDataComparison", {
+    const res = await fetch(`${config.url}/UserDataComparison`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

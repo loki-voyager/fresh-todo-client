@@ -1,3 +1,5 @@
+import { config } from "../../config";
+
 const UserChechExist = async ({
   username,
   email,
@@ -8,7 +10,7 @@ const UserChechExist = async ({
   setError: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   try {
-    const res = await fetch("http://localhost:8080/UserChechExist", {
+    const res = await fetch(`${config.url}/UserChechExist`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
