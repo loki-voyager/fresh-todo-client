@@ -3,13 +3,13 @@ import { useState } from "react";
 type Base64PicProps = {
   base64Codes: string[];
   setBase64Codes?: React.Dispatch<React.SetStateAction<string[]>>;
-  permission?:boolean
+  permission?: boolean;
 };
 
 const Base64ArrayModifier = ({
   base64Codes,
   setBase64Codes,
-  permission
+  permission,
 }: Base64PicProps) => {
   const [deletedCodes, setDeletedCodes] = useState<number[]>([]);
 
@@ -39,10 +39,13 @@ const Base64ArrayModifier = ({
         <>
           <div className="picBlock">
             {base64Codes.map((base64, index) => (
+              // eslint-disable-next-line jsx-a11y/img-redundant-alt
               <img
                 className={`${
                   base64Codes.length > 1 || permission
-                    ? isDeleted(index) ? "deleted cursor-pointer" : "cursor-pointer"
+                    ? isDeleted(index)
+                      ? "deleted cursor-pointer"
+                      : "cursor-pointer"
                     : ""
                 }`}
                 key={index}

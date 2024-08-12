@@ -6,6 +6,8 @@ import { EditUserType, UserEdit } from "../../service/User/UserEdit";
 import { useNavigate } from "react-router-dom";
 
 const EditProfile = ({ userState, setError, setEdit }: ProfileProps) => {
+
+  
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -32,7 +34,7 @@ const EditProfile = ({ userState, setError, setEdit }: ProfileProps) => {
         email: email.length > 0 ? email : userState.email,
         username: username.length > 0 ? username : userState.username,
         password,
-        pic: base64Codes,
+        pic: [...base64Codes].reverse(),
       };
       await UserEdit({ user, token: userState.token, setError }).then((res) => {
         if (res) {
@@ -46,7 +48,7 @@ const EditProfile = ({ userState, setError, setEdit }: ProfileProps) => {
 
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement>,
-    set: React.Dispatch<React.SetStateAction<string>>
+    set: React.Dispatch<React.SetStateAction<string>>,
   ) => {
     set(event.target.value);
   };
@@ -71,7 +73,7 @@ const EditProfile = ({ userState, setError, setEdit }: ProfileProps) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleButtonClick = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
     event.preventDefault();
     if (fileInputRef.current) {
